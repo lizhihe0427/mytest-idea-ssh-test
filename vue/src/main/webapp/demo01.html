@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/axios-0.18.0.js"></script>
+<!--<script src="./js/vuejs-2.6.6.js"></script>-->
+<body>
+<div id="app">
+    {{message+20}}<br>
+    {{message>=10?"ok":"不ok"}} <br/>
+    {{hah}}<br/>
+    <input type="button" v-on:click="fun()" >
+    <input type="button" @click="fun2()" value="按钮2">
+</div>
+</body>
+</html>
+<!--【需求】：vuejs的入门程序-->
+<script>
+    var vue=new Vue({
+        el: "#app",//表示接管了当前div区域
+        data: {//模型 数据 model
+            message: 10,
+            hah:200
+        },
+        methods: {//声明方法
+            fun:function () {
+                this.message="哈哈"
+            },
+            fun2:function () {
+                this.hah="嘻嘻";
+            }
+        }
+    })
+    vue.message="你号vueJS" //模型发生变化 视图也会跟着变化  模型视图双向绑定
+</script>

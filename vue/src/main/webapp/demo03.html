@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+
+<meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vuejs-2.6.6.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <input type="button" value="按钮1" v-on:click="fun()" >
+    <input type="button" value="按钮2" @click="fun2()">
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            message: 10
+        },
+        methods: {
+            fun:function () {
+                this.message="hah"
+            },
+            fun2:function () {
+                this.message="heh"
+            }
+
+        }
+    })
+    vue.message="hah"
+</script>
+</html>
+

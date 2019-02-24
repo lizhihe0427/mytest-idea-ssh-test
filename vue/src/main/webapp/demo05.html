@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+
+<meta charset="UTF-8">
+<title>Title</title>
+<script src="js/vuejs-2.6.6.js"></script>
+</head>
+<body>
+<div id="app">
+    <font v-bind:color="yes2">哈哈哈</font><br/>
+    <font v-bind:color="yes1">嘻嘻嘻</font>
+    <button @click="fun()">改变颜色</button>
+
+</div>
+</body>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            yes1: "red",
+            yes2: "blue"
+        },
+        methods: {
+            fun: function () {
+                this.yes1 = "yellow"
+            }
+
+        }
+    })
+    vue.message = "hah"
+</script>
+</html>
+
