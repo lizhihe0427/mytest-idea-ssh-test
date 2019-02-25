@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vuejs-2.6.6.js"></script>
+</head>
+
+<div id="app">
+    <ul>
+        <li v-for="(v,i) in array">{{v}}</li>
+        <li v-for="(v,i) in array">{{v}}</li>
+    </ul>
+    <ul>
+        <li v-for="(v,i) in list">
+            {{v.username}}
+            {{v.age}}
+        </li>
+    </ul>
+</div>
+<body>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            array:["北京","上海","深圳"],
+            list:[{username:"张三",age:123},{username:"李四",age:124},{username:"王五",age:125}]
+        },
+        methods: {
+
+        }
+    })
+</script>
+
+
+</body>
+</html>

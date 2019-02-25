@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vuejs-2.6.6.js"></script>
+</head>
+
+<div id="app">
+    <table bgcolor="#ffffff" border="1">
+        <tr>
+            <td>序号</td>
+            <td>商品id</td>
+            <td>商品名称</td>
+            <td>商品价格</td>
+        </tr>
+        <tr v-for="(v,i) in product">
+            <td>{{i+1}}</td>
+            <td>{{v.id}}</td>
+            <td>{{v.name}}</td>
+            <td>{{v.price}}</td>
+        </tr>
+    </table>
+</div>
+<body>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            product: [
+                {
+                id: 10,
+                name: "华为手机",
+                price: 111
+            }, {
+                id: 20,
+                name: "苹果手机",
+                price: 186
+            }, {
+                id: 30,
+                name: "魅族手机",
+                price: 156
+            }]
+        },
+        methods: {}
+    })
+</script>
+
+
+</body>
+</html>

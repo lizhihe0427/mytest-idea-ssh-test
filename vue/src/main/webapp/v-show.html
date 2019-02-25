@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vuejs-2.6.6.js"></script>
+</head>
+
+<div id="app">
+    {{message}}
+</div>
+<body>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        //template:"<font color='red'>{{message}}<font/><br/>",//模板的优先级高于没有模板的优先级
+        data: {
+            message:"VueJs生命周期"
+        },
+        methods: {
+
+        },
+        beforeCreate:function () {
+            showInfo("创建之前",this)
+        },
+        created:function () {
+            showInfo("创建之后",this)
+        },
+        beforeMount:function () {/*判断有没有el 如果没有整个周期结束*/
+            showInfo("转载Dom对象之前",this)
+        },/*如果没有el的选项 可以调用vue $monut方法*/
+        mounted:function () {
+            showInfo("转载Dom对象之后",this)
+        },
+        beforeUpdate:function () {
+            
+        }
+    })
+    //vue.$mount("#app")
+
+    function showInfo(m,v) {
+        console.log(m)
+        console.log("vue声明变量message的值"+v.message)
+        console.log("vue中虚拟的dom结构"+v.$el)
+        console.log(v.$el)
+        console.log("真实的dom结构")
+        console.log(document.getElementById("app").innerHTML)
+        console.log("---------------------------")
+    }
+    
+</script>
+
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="js/vuejs-2.6.6.js"></script>
+    <script src="./js/vuejs-2.6.6.js"></script>
 </head>
 
 <div id="app">
@@ -19,11 +19,13 @@
             user: {
                 username: "lizhihe",
                 password: "123456"
-            },
-            methods: {
-                fun:function () {
-                    alert(vue.user.username+"--------------"+vue.user.password)
-                }
+            }
+        },
+        methods: {
+            fun:function () {
+                alert(vue.user.username+"--------------"+vue.user.password)
+                vue.user.username="王五"
+                vue.user.password="wangwu"
             }
         }
     })
