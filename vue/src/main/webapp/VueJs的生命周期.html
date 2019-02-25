@@ -33,10 +33,14 @@
             showInfo("转载Dom对象之后",this)
         },
         beforeUpdate:function () {
-            
+            showInfo("数据变化之前",this)
+        },
+        update:function () {
+            showInfo("数据变化之后",this)
         }
     })
     //vue.$mount("#app")
+    vue.message="数据发生了变化 VueJs"
 
     function showInfo(m,v) {
         console.log(m)
