@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/axios-0.18.0.js"></script>
+    <script src="js/vuejs-2.6.6.js"></script>
+</head>
+<div id="app">
+
+</div>
+<body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            message:"张三丰"
+        },
+        methods:{
+            init:function () {
+                axios.get("data/axios.json",{params:{id:this.id}}).then(function (response) {
+                    alert(response)
+                    console.log(response)
+                    alert(JSON.stringify(response.data))
+                    alert(JSON.stringify(response.data[0].username))
+                }).catch(function () {
+                    alert("测试失败")
+                })
+            }
+        },
+        created:function () {
+            this.init();
+        }
+    })
+
+</script>
+</body>
+</html>
